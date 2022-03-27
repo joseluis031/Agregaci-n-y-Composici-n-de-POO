@@ -5,9 +5,14 @@ if __name__ == "__main__":
     
     if ciudad == "NewYork":
         from Clases.eldia2 import NuevaYork
-        total = NuevaYork(ciudad, edificios, persona)
-        print(total.Edificios())
-        print(total.Persona())
+        def Create_obj(): 
+            print('Making Object...') 
+            obj = NuevaYork(ciudad,edificios,persona) 
+            print('function end...') 
+            return obj
+        obj = Create_obj()
+        del obj
+        
     elif ciudad == "LosAngeles":
         from Clases.eldia2 import LosAngeles
         total1 = LosAngeles(ciudad,edificios,persona)

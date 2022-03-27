@@ -19,6 +19,8 @@ class LosAngeles:
     def Edificios(self):
         self.edificios.append("C")
         print("En LosAngeles se encuentra el edificio",self.edificios)
+    def __del__(self):
+        print("El edificio",self.edificios,"ha sido derrumbado")
     def Persona(self):
         self.persona.append("señor Xing")
         print("En LosAngeles se encuentra el empleado", self.persona)
