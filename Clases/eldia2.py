@@ -1,5 +1,3 @@
-edificios = []
-persona = []
 class NuevaYork:
     def __init__(self,ciudad,edificios,persona):
         self.ciudad = ciudad
