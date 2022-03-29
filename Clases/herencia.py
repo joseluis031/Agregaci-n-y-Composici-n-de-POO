@@ -1,21 +1,20 @@
 class Pared:
-    def __init__(self,orientacion,ventanas):
+    def __init__(self,orientacion,):
         self.orientacion = orientacion
-        self.ventanas = ventanas
-class Ventana(Pared):
-    def __init__(self,orientacion,ventanas,superficie,pared):
+class Ventana:
+    def __init__(self,superficie,pared):
         self.superficie = superficie
         self.pared = pared
-        Pared.__init__(self,orientacion,ventanas)
         
-class Casa(Ventana):
-    def __init__(self,orientacion,superficie,paredes):
+        
+class Casa:
+    def __init__(self,paredes):
         self.paredes = paredes
-        Ventana.__init__(self,orientacion,superficie)
-    def cristal(self):
+        self.ventanas = []
+    def superficie_acristalada(self):
         self.superficie = 0
-        for ventana in self.ventanas:
-            self.superficie += ventana.superficie()
+        for ventana in self.paredes:
+            self.superficie += ventana.superficie
             return self.superficie
         
         
@@ -32,4 +31,14 @@ ventana_sur = Ventana(pared_sur, 2)
 ventana_este = Ventana(pared_este, 1) 
 # Instanciación de la casa con las 4 paredes 
 casa = Casa([pared_norte, pared_oeste, pared_sur, pared_este]) 
-print(casa.superficie_acristalada())    
+print(casa.superficie_acristalada())   
+
+class ParedCortina(Pared,Ventana):
+    def __init__(self,orientacion,superficie,pared):
+       Pared.__init__(self,orientacion)
+       Ventana.__init__(self,pared,superficie)
+
+pared_cortina = ParedCortina("Este", 10)
+casa = Casa([pared_norte, pared_oeste, pared_sur, pared_cortina]) 
+print(casa.superficie_acristalada())
+
