@@ -1,17 +1,24 @@
 class Pared:
-    def __init__(self,orientacion):
+    def __init__(self,orientacion,ventanas):
         self.orientacion = orientacion
-        
+        self.ventanas = ventanas
 class Ventana(Pared):
-    def __init__(self,orientacion,superficie):
+    def __init__(self,orientacion,ventanas,superficie,pared):
         self.superficie = superficie
-        Pared.__init__(self,orientacion)
+        self.pared = pared
+        Pared.__init__(self,orientacion,ventanas)
         
 class Casa(Ventana):
     def __init__(self,orientacion,superficie,paredes):
         self.paredes = paredes
         Ventana.__init__(self,orientacion,superficie)
-
+    def cristal(self):
+        self.superficie = 0
+        for ventana in self.ventanas:
+            self.superficie += ventana.superficie()
+            return self.superficie
+        
+        
 
 # Instanciación de las paredes 
 pared_norte = Pared("NORTE") 
