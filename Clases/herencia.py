@@ -39,6 +39,5 @@ class ParedCortina(Pared,Ventana):
        Ventana.__init__(self,pared,superficie)
 
 pared_cortina = ParedCortina("Este", 10)
-casa = Casa([pared_norte, pared_oeste, pared_sur, pared_cortina]) 
-print(casa.superficie_acristalada())
+
 
