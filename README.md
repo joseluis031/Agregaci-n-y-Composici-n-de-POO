@@ -41,6 +41,9 @@ class LosAngeles:
 --Su UML es el siguiente:
 
 
+![UML Dia siguiente](https://user-images.githubusercontent.com/91721888/160854625-4d57e50a-9028-4973-8b51-b917537f43a9.png)
+
+
 ## Ejercicio 2
 ```
 class Yin: pass 
