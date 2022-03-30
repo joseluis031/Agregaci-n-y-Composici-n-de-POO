@@ -113,3 +113,7 @@ class ParedCortina(Pared,Ventana):
 
 pared_cortina = ParedCortina("Este", 10)
 ```
+
+--Su UML es el siguiente:
+
+![UML Herenciamult_paredcortina](https://user-images.githubusercontent.com/91721888/160937035-60460752-942d-4c65-997c-be0bf706cf4b.png)
