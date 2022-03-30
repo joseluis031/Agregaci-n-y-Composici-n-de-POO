@@ -39,5 +39,3 @@ class ParedCortina(Pared,Ventana):
        Ventana.__init__(self,pared,superficie)
 
 pared_cortina = ParedCortina("Este", 10)
-
-
